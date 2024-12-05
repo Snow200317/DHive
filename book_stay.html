@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Book Your Stay</title>
+
+</head>
+<body>
+        <section id="booking" class="booking-section">
+            <div class="container">
+              <h2 class="section-title">Book Your Stay</h2>
+              <p class="section-description">Choose your room and let us take care of the rest. Fill out the form below to book your space at L'Hive PG today!</p>
+              <form class="booking-form" action="#" method="post">
+               {% csrf_token %}
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                  <label for="room-type">Select Room Type</label>
+                  <select id="room-type" name="room-type" required>
+                    <option value="three-sharing">Three Sharing - ₹9000</option>
+                    <option value="two-sharing-balcony">Two Sharing (With Balcony) - ₹12,500</option>
+                    <option value="two-sharing-no-balcony">Two Sharing (No Balcony) - ₹12,000</option>
+                    <option value="single-balcony">Single Sharing (With Balcony) - ₹22,000</option>
+                    <option value="single-no-balcony">Single Sharing (No Balcony) - ₹21,000</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="move-in-date">Move-In Date</label>
+                  <input type="date" id="move-in-date" name="move-in-date" required>
+                </div>
+                <button type="submit" class="submit-btn">Book Now</button>
+              </form>
+            </div>
+          </section> 
+          <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
